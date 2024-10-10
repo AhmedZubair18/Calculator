@@ -27,6 +27,12 @@ buttons.forEach(button => {
                 currentValue += ' ' + button.textContent + ' '; // Add operator
             }
         }
+        else if (button.dataset.dot) {
+            // Check if dot is already present in the current value to avoid multiple dots
+            if (!currentValue.includes('.')) {
+                currentValue += '.';
+            }
+        }
         // Update display
         display.value = currentValue;
     });
